@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev:vercel": "vercel dev",
-    "dev:netlify": "netlify functions:serve"
+    "dev:vercel": "vercel dev"
   },
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.2",
@@ -14,10 +13,9 @@
     "vclight-router": "^1.3.0"
   },
   "devDependencies": {
-    "@vercel/node": "^3.1.6",
     "@netlify/functions": "^2.7.0",
-    "vercel": "^34.2.4",
-    "netlify-cli": "^17.25.0"
+    "@vercel/node": "^3.0.1",
+    "vercel": "^32.3.0"
   },
   "main": "generateAccessToken.js",
   "author": "IceCreamMC Team",
