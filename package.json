@@ -1,6 +1,6 @@
 {
-  "name": "leavesmc-api-v2-dev",
-  "version": "0.1.0",
+  "name": "api.icecreammc.xyz",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev:vercel": "vercel dev",
@@ -18,5 +18,9 @@
     "@netlify/functions": "^2.7.0",
     "vercel": "^34.2.4",
     "netlify-cli": "^17.25.0"
-  }
+  },
+  "main": "generateAccessToken.js",
+  "author": "IceCreamMC Team",
+  "license": "ISC",
+  "description": ""
 }

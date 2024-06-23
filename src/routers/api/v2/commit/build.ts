@@ -6,6 +6,7 @@ import restError from "../../../../utils/restError";
 router.on("/v2/commit/build", async function(request, response) {
     response.contentType = "application/json";
     try {
+        console.log(request.headers)
         if (!await Utils.authentication(request)) {
             return restError.$401(response);
         }

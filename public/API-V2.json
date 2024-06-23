@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "LeavesMC API",
+    "title": "IceCreamMC API",
     "version": "2.0"
   },
   "servers": [
     {
-      "url": "https://api.leavesmc.top"
+      "url": "https://api.icecreammc.xyz"
     },
     {
       "url": "http://localhost:3000"
@@ -15,15 +15,15 @@
   "tags": [
     {
       "name": "Query",
-      "description": "查询数据库中的数据"
+      "description": "Querying data in a database"
     },
     {
       "name": "Commit",
-      "description": "提交数据到数据库"
+      "description": "Submit data to the database"
     },
     {
       "name": "Download",
-      "description": "下载文件"
+      "description": "Download file"
     }
   ],
   "components": {
@@ -38,13 +38,13 @@
   "paths": {
     "/v2/projects": {
       "get": {
-        "summary": "获取项目列表",
+        "summary": "Get a list of projects",
         "tags": [
           "Query"
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -79,7 +79,7 @@
     },
     "/v2/projects/{project}": {
       "get": {
-        "summary": "获取指定项目的信息",
+        "summary": "Get information about a specific project",
         "tags": [
           "Query"
         ],
@@ -95,7 +95,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -123,27 +123,20 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
+                  "project_id": "icecreammc",
+                  "project_name": "icecreammc",
                   "version_groups": [
-                    "1.20",
-                    "1.19"
+                    "1.21"
                   ],
                   "versions": [
-                    "1.20.1",
-                    "1.20",
-                    "1.19.4",
-                    "1.19.3",
-                    "1.19.2",
-                    "1.19.1",
-                    "1.19"
+                    "1.21"
                   ]
                 }
               }
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -172,7 +165,7 @@
     },
     "/v2/projects/{project}/versions/{version}": {
       "get": {
-        "summary": "获取指定项目的指定版本的信息",
+        "summary": "Get information about a specified version of a specified project",
         "tags": [
           "Query"
         ],
@@ -196,7 +189,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -224,9 +217,9 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
-                  "version": "1.20",
+                  "project_id": "icecream",
+                  "project_name": "IceCream",
+                  "version": "1.21",
                   "builds": [
                     1,
                     2,
@@ -237,7 +230,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -266,7 +259,7 @@
     },
     "/v2/projects/{project}/versions/{version}/builds": {
       "get": {
-        "summary": "获取指定项目的指定版本的Build信息",
+        "summary": "Get the build information of the specified version of the specified project",
         "tags": [
           "Query"
         ],
@@ -290,7 +283,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -318,9 +311,9 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
-                  "version": "1.20",
+                  "project_id": "icecream",
+                  "project_name": "IceCream",
+                  "version": "1.21",
                   "builds": [
                     {
                       "build": 1,
@@ -347,7 +340,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -376,7 +369,7 @@
     },
     "/v2/projects/{project}/versions/{version}/builds/{build}": {
       "get": {
-        "summary": "获取指定项目的指定版本的指定Build的信息",
+        "summary": "Get the information of the specified build of the specified version of the specified project",
         "tags": [
           "Query"
         ],
@@ -408,7 +401,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -451,9 +444,9 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
-                  "version": "1.20",
+                  "project_id": "icecream",
+                  "project_name": "IceCream",
+                  "version": "1.21",
                   "build": 1,
                   "time": "2023-08-03T06:12:14.887Z",
                   "channel": "default",
@@ -476,7 +469,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -505,7 +498,7 @@
     },
     "/v2/projects/{project}/version_group/{family}": {
       "get": {
-        "summary": "获取指定项目的指定版本组的所有子版本",
+        "summary": "Get all sub-versions of the specified version group of the specified project",
         "tags": [
           "Query"
         ],
@@ -529,7 +522,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -557,19 +550,18 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
-                  "version_group": "1.20",
+                  "project_id": "icecream",
+                  "project_name": "IceCream",
+                  "version_group": "1.21",
                   "versions": [
-                    "1.20.1",
-                    "1.20"
+                    "1.21"
                   ]
                 }
               }
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -598,7 +590,7 @@
     },
     "/v2/projects/{project}/version_group/{family}/builds": {
       "get": {
-        "summary": "获取指定项目的指定版本组的所有Build的信息",
+        "summary": "Get the information of all builds of a specified version group of a specified project",
         "tags": [
           "Query"
         ],
@@ -622,7 +614,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -653,12 +645,11 @@
                 },
                 "example": {
                   "code": 200,
-                  "project_id": "leaves",
-                  "project_name": "Leaves",
-                  "version_group": "1.20",
+                  "project_id": "icecream",
+                  "project_name": "IceCream",
+                  "version_group": "1.21",
                   "versions": [
-                    "1.20.1",
-                    "1.20"
+                    "1.21"
                   ],
                   "builds": [
                     {
@@ -686,7 +677,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -715,7 +706,7 @@
     },
     "/v2/projects/{project}/versions/{version}/builds/{build}/downloads/{download}": {
       "get": {
-        "summary": "获取指定项目的指定版本的指定Build的信息",
+        "summary": "Get the information of the specified build of the specified version of the specified project",
         "tags": [
           "Download"
         ],
@@ -755,13 +746,13 @@
         ],
         "responses": {
           "301": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/java-archive": {}
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -790,7 +781,7 @@
     },
     "/v2/commit/build": {
       "post": {
-        "summary": "提交一个新Build到数据库",
+        "summary": "Submit a new build to the database",
         "tags": [
           "Commit"
         ],
@@ -831,26 +822,26 @@
                 "required": true
               },
               "example": {
-                "project_id": "leaves",
-                "version": "1.20.1",
+                "project_id": "icecream",
+                "version": "1.21",
                 "channel": "default",
                 "changes": "changes",
-                "jar_name": "leaves-1.20.1.jar",
+                "jar_name": "icecream-1.21.jar",
                 "sha256": "sha256",
-                "tag": "1.20.1-1a2b3c4"
+                "tag": "1.21-1a2b3c4"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "提交成功"
+            "description": "Submitted successfully"
           },
           "400": {
-            "description": "请求格式错误"
+            "description": "Request format error"
           },
           "401": {
-            "description": "未授权"
+            "description": "Not found"
           }
         }
       }
